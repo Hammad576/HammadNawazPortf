@@ -18,10 +18,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className="bg-matrix-dark text-matrix-green">
+      <body className="min-h-screen">
+        <nav className="bg-matrix-gray p-4 border-b border-matrix-green">
+          <div className="container mx-auto flex justify-center items-center space-x-8">
+            <a href="/" className="text-2xl font-bold">
+              Hammad Nawaz
+            </a>
+            <div className="space-x-4">
+              <a href="/about" className="hover:underline">
+                About
+              </a>
+              <a href="/projects" className="hover:underline">
+                Projects
+              </a>
+              <a href="/contact" className="hover:underline">
+                Contact
+              </a>
+            </div>
+          </div>
+        </nav>
         {children}
       </body>
     </html>
