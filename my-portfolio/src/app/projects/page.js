@@ -1,60 +1,85 @@
-import { FaWarehouse, FaRobot, FaCode } from "react-icons/fa"; // Import icons for projects
-import { SiNextdotjs } from "react-icons/si";
+import {
+  Code,
+  BrainCircuit,
+  ShoppingCart,
+  LayoutDashboard,
+  CalendarCheck,
+  FileText,
+} from "lucide-react";
 
 export default function Projects() {
+  // Define an array of projects with details
   const projects = [
     {
-      title: "Warehouse Management Project",
+      title: "E-Commerce Platform",
       description:
-        "I have created a warehouse management project where we completely digitalized the process. The management can now manage and track the inventory efficiently.",
-      link: "#",
-      icon: <FaWarehouse className="text-4xl text-matrix-green mb-2" />, // Icon for Warehouse
+        "A full-stack e-commerce platform built with MERN stack, featuring user authentication, product management, and payment integration.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <ShoppingCart className="text-6xl text-matrix-green" />,
     },
     {
-      title: "ChatBot Using Next.js",
-      description: "A real-time chat application using Next.js and WebSockets.",
-      link: "#",
-      icon: <SiNextdotjs className="text-4xl text-matrix-green mb-2" />, // Icon for Next.js
+      title: "AI-Powered Chatbot",
+      description:
+        "An AI-powered chatbot using TensorFlow and Python, capable of answering user queries and providing recommendations.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <BrainCircuit className="text-6xl text-matrix-green" />,
     },
     {
-      title: "My Portfolio Website",
-      description: "A portfolio website with a Matrix-inspired theme.",
-      link: "#",
-      icon: <FaCode className="text-4xl text-matrix-green mb-2" />, // Icon for Code/Portfolio
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio website built with Next.js, Tailwind CSS, and Geist fonts, showcasing my skills and projects.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <Code className="text-6xl text-matrix-green" />,
+    },
+    {
+      title: "Task Management App",
+      description:
+        "A task management app built with React and Node.js, allowing users to create, update, and delete tasks.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <CalendarCheck className="text-6xl text-matrix-green" />,
+    },
+    {
+      title: "Social Media Dashboard",
+      description:
+        "A dashboard for managing social media posts, built with MongoDB and Express.js.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <LayoutDashboard className="text-6xl text-matrix-green" />,
+    },
+    {
+      title: "Responsive Blog Template",
+      description:
+        "A responsive blog template built with Tailwind CSS and Next.js, optimized for SEO.",
+      link: "https://example.com", // Replace with your project URL
+      icon: <FileText className="text-6xl text-matrix-green" />,
     },
   ];
 
   return (
     <main className="min-h-screen p-8">
       {/* Title */}
-      <h1 className="text-4xl font-bold text-center">My Projects</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">My Projects</h1>
 
       {/* Projects Grid */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div
+          <a
             key={index}
-            className="border border-matrix-green p-6 rounded-lg hover:bg-matrix-gray transition-all duration-300 ease-in-out transform hover:scale-105"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-matrix-gray border border-matrix-green rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:bg-matrix-dark hover:border-matrix-green/80"
           >
-            {/* Icon */}
-            <div className="flex justify-center">{project.icon}</div>
+            {/* Project Icon */}
+            <div className="flex justify-center items-center h-32 bg-matrix-dark rounded-t-lg">
+              {project.icon}
+            </div>
 
-            {/* Title */}
-            <h2 className="text-2xl font-bold text-center mt-4">
-              {project.title}
-            </h2>
-
-            {/* Description */}
-            <p className="text-center mt-2">{project.description}</p>
-
-            {/* View Project Button */}
-            <a
-              href={project.link}
-              className="block text-center mt-4 text-matrix-green hover:underline hover:text-matrix-green/80 transition-colors"
-            >
-              View Project
-            </a>
-          </div>
+            {/* Project Details */}
+            <div className="p-6">
+              <h2 className="text-xl font-bold mb-2">{project.title}</h2>
+              <p className="text-matrix-green/80">{project.description}</p>
+            </div>
+          </a>
         ))}
       </div>
     </main>

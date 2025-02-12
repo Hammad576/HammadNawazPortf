@@ -1,38 +1,22 @@
-"use client"
-import { FaLinkedin } from 'react-icons/fa'; // Import LinkedIn icon
-import { useState, useEffect } from 'react';
+import { FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  // Trigger animation when the component mounts
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <main className="min-h-screen p-8">
-      {/* Title */}
+    <main className="min-h-screen">
       <h1 className="text-4xl font-bold text-center mb-8">Contact Me</h1>
 
       {/* LinkedIn Section */}
-      <div
-        className={`text-center mb-12 transition-opacity duration-1000 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <div className="max-w-md mx-auto p-6 border border-matrix-green rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:bg-matrix-gray hover:border-matrix-green/80 hover:scale-105">
-          <p className="text-2xl mb-4">Connect with me on LinkedIn:</p>
-          <a
-            href="https://www.linkedin.com/in/hammad-nawaz-25b998253" // Replace with your LinkedIn profile URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-matrix-green hover:text-matrix-green/80 transition-colors"
-          >
-            <FaLinkedin className="mr-2 text-4xl" /> {/* LinkedIn Icon */}
-            <span className="text-lg">My LinkedIn Profile</span>
-          </a>
-        </div>
+      <div className="text-center mb-12">
+        <p className="text-2xl mb-4">Connect with me on LinkedIn:</p>
+        <a
+          href="https://www.linkedin.com/in/hammad-nawaz-25b998253"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-matrix-green hover:text-matrix-green/80 transition-colors"
+        >
+          <FaLinkedin className="mr-2 text-4xl" />
+          <span className="text-lg">My LinkedIn Profile</span>
+        </a>
       </div>
 
       {/* Contact Form */}
